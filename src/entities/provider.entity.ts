@@ -24,4 +24,4 @@ export class Provider extends Document {
 
 }
 
-export const ProvidertSchema = SchemaFactory.createForClass(Provider);
+export const ProviderSchema = SchemaFactory.createForClass(Provider);
