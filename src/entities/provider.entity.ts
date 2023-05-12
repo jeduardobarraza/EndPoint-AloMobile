@@ -5,7 +5,7 @@ import { Document } from 'mongoose';
 @Schema({ timestamps: true })
 export class Provider extends Document {
   @Prop({ required: true, unique: true, index: true })
-  ProviderId: string;
+  providerId: string;
 
   @Prop({ required: true })
   name: string;

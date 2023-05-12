@@ -24,12 +24,32 @@ import {
       return '*********Provider Service Works*************';
     }
 
+    // async create(provider: ProviderDto) {
+    //   try {
+    //     const providerDocument = {
+    //       ...provider,
+    //       providerId: util.getShortId(),
+    //     };
+    //     console.log("***provider***");
+    //     console.log(providerDocument);
+    //     return await new this.providerModel(providerDocument).save();
+    //   } catch (error) {
+    //     const hasDuplicateKeyText = (error.message || '')
+    //       .toString()
+    //       .includes(TEXT_TO_VALIDATE_MONGO_DUPLICATES);
+    //     if (hasDuplicateKeyText)
+    //       throw new ConflictException(providerMessages.duplicate);
+    //     throw new InternalServerErrorException(providerMessages.saveError);
+    //   }
+    // }
+
     async create(provider: ProviderDto) {
       try {
         const providerDocument = {
           ...provider,
           providerId: util.getShortId(),
         };
+        console.log(providerDocument);
         return await new this.providerModel(providerDocument).save();
       } catch (error) {
         const hasDuplicateKeyText = (error.message || '')
@@ -40,6 +60,7 @@ import {
         throw new InternalServerErrorException(providerMessages.saveError);
       }
     }
+
 
     async getProviders(type = '') {
       let filter: FilterQuery<Provider>;

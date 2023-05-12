@@ -4,6 +4,7 @@ import { AppService } from './services/app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config'
 import dbConfig from './modules/db-config'
+
 import { User, UserSchema } from './entities/user.entity'
 import { Product, ProductSchema } from './entities/product.entity';
 import { Provider, ProviderSchema } from './entities/provider.entity';
